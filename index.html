@@ -9,123 +9,131 @@
     <link rel="icon" type="image/x-icon" href="myicon.ico">
 
     <style>
-        :root {
-            --primary: #2ecc71;
-            --primary-hover: #27ae60;
-            --text-dark: #2c3e50;
-        }
+    :root {
+        --primary: #00ff88; /* Verde fluo più moderno */
+        --primary-hover: #00db77;
+        --glass: rgba(255, 255, 255, 0.1);
+        --text: #ffffff;
+    }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        body { 
-            font-family: 'Segoe UI', Roboto, sans-serif; 
-            height: 100vh;
-            display: flex; 
-            justify-content: center; 
-            align-items: center;
-            overflow: hidden;
-            background: #000;
-        }
+    body { 
+        font-family: 'Inter', -apple-system, sans-serif; 
+        height: 100vh;
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+        overflow: hidden;
+        background: #0f172a; /* Blu scuro profondo di base */
+    }
 
-        /* SFONDO ANIMATO */
-        .bg-container {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1;
-            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('sfondo.png');
-            background-size: cover;
-            background-position: center;
-            animation: zoomBg 20s infinite alternate ease-in-out;
-        }
+    /* SFONDO ANIMATO MESH GRADIENT */
+    .bg-container {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        z-index: -1;
+        background: url('sfondo.png');
+        background-size: cover;
+        background-position: center;
+    }
 
-        @keyframes zoomBg {
-            from { transform: scale(1); }
-            to { transform: scale(1.1); }
-        }
+    .bg-overlay {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: linear-gradient(45deg, #0f172aeb, #1e293bee, #0f172adb);
+        backdrop-filter: blur(10px); /* Sfoca l'immagine di sfondo per un look pulito */
+    }
 
-        /* CARD EFFETTO VETRO */
-        .card { 
-            background: rgba(255, 255, 255, 0.85); 
-            padding: 50px 40px; 
-            border-radius: 24px; 
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5); 
-            text-align: center; 
-            max-width: 450px; 
-            width: 90%; 
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            animation: fadeIn 1s ease-out;
-        }
+    /* CARD DARK MODE GLASS */
+    .card { 
+        background: rgba(30, 41, 59, 0.7); 
+        padding: 60px 40px; 
+        border-radius: 30px; 
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); 
+        text-align: center; 
+        max-width: 450px; 
+        width: 90%; 
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+    @keyframes slideUp {
+        from { opacity: 0; transform: translateY(40px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 
-        .app-icon {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 25px;
-            filter: drop-shadow(0 8px 15px rgba(0,0,0,0.2));
-            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
+    .app-icon {
+        width: 110px;
+        height: 110px;
+        margin-bottom: 25px;
+        filter: drop-shadow(0 0 15px rgba(0, 255, 136, 0.3));
+        transition: all 0.4s ease;
+    }
 
-        .app-icon:hover { transform: scale(1.1) rotate(5deg); }
+    .app-icon:hover { 
+        transform: scale(1.15) rotate(-5deg);
+        filter: drop-shadow(0 0 25px rgba(0, 255, 136, 0.5));
+    }
 
-        h1 { color: var(--text-dark); font-size: 2.2rem; margin-bottom: 15px; letter-spacing: -1px; }
-        p { color: #5a6c7d; line-height: 1.6; margin-bottom: 35px; font-size: 1.05rem; }
+    h1 { color: #fff; font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; letter-spacing: -1.5px; }
+    p { color: #94a3b8; line-height: 1.6; margin-bottom: 40px; font-size: 1.1rem; }
 
-        /* PULSANTE DESIGN */
-        .btn-download { 
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--primary); 
-            color: white; 
-            padding: 18px 40px; 
-            text-decoration: none; 
-            border-radius: 12px; 
-            font-weight: bold; 
-            font-size: 1.2rem;
-            transition: all 0.3s; 
-            box-shadow: 0 10px 20px rgba(46, 204, 113, 0.3);
-            width: 100%;
-        }
+    /* PULSANTE NEON */
+    .btn-download { 
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--primary); 
+        color: #0f172a; 
+        padding: 20px 40px; 
+        text-decoration: none; 
+        border-radius: 16px; 
+        font-weight: 800; 
+        font-size: 1.25rem;
+        transition: all 0.3s; 
+        width: 100%;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
 
-        .btn-download:hover { 
-            background: var(--primary-hover); 
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(46, 204, 113, 0.5);
-        }
+    .btn-download:hover { 
+        background: #fff; 
+        transform: scale(1.02);
+        box-shadow: 0 0 30px rgba(0, 255, 136, 0.6);
+    }
 
-        .btn-download svg { margin-right: 10px; width: 24px; height: 24px; fill: white; }
+    /* INFO BOX */
+    .info-box { 
+        margin-top: 40px; 
+        font-size: 0.85rem; 
+        color: #64748b; 
+        border-top: 1px solid rgba(255, 255, 255, 0.05); 
+        padding-top: 25px; 
+    }
 
-        /* INFO BOX */
-        .info-box { 
-            margin-top: 35px; 
-            font-size: 0.85rem; 
-            color: #7f8c8d; 
-            border-top: 1px solid rgba(0,0,0,0.1); 
-            padding-top: 25px; 
-        }
+    .warning { color: var(--primary); font-weight: bold; display: block; margin-bottom: 8px; opacity: 0.8; }
+    
+    .version-tag {
+        background: rgba(0, 255, 136, 0.1);
+        padding: 6px 16px;
+        border-radius: 100px;
+        font-size: 0.75rem;
+        color: var(--primary);
+        font-weight: bold;
+        margin-bottom: 15px;
+        display: inline-block;
+        border: 1px solid rgba(0, 255, 136, 0.2);
+    }
+</style>
 
-        .warning { color: #e67e22; font-weight: bold; display: block; margin-bottom: 8px; }
-        
-        .version-tag {
-            background: #ecf0f1;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            color: #7f8c8d;
-            margin-bottom: 10px;
-            display: inline-block;
-        }
-    </style>
 </head>
 <body>
 
 <div class="bg-container"></div>
-
+    <div class="bg-overlay"></div>
+</div>
 <div class="card">
     <img src="myicon.ico" alt="Logo" class="app-icon">
     
@@ -147,3 +155,4 @@
 
 </body>
 </html>
+
