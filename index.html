@@ -39,29 +39,41 @@
     }
 
     .bg-overlay {
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background: linear-gradient(45deg, #0f172aeb, #1e293bee, #0f172adb);
-        backdrop-filter: blur(10px); /* Sfoca l'immagine di sfondo per un look pulito */
-    }
-
-    /* CARD DARK MODE GLASS */
-    /* Rende la card larga e a due colonne */
-.card { 
-    background: rgba(30, 41, 59, 0.75); 
-    padding: 40px; 
-    border-radius: 30px; 
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5); 
-    display: flex; /* Attiva le colonne */
-    align-items: center;
-    gap: 40px; /* Spazio tra testo e immagine */
-    max-width: 900px; /* Card più larga per far stare tutto */
-    width: 95%; 
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    animation: slideUp 0.8s ease-out;
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Riduciamo l'opacità del nero e ELIMINIAMO il blur qui */
+    background: linear-gradient(45deg, rgba(15, 23, 42, 0.4), rgba(30, 41, 59, 0.2));
+    backdrop-filter: none; /* Rimuoviamo la sfocatura globale dello sfondo */
 }
 
+/* CARD CON SFOCATURA SOLO DIETRO IL TESTO */
+.card { 
+    background: rgba(15, 23, 42, 0.85); /* Scuriamo un po' la card per contrasto */
+    padding: 50px; 
+    border-radius: 30px; 
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6); 
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1000px; /* Un po' più larga per la nitidezza */
+    width: 95%; 
+    /* Applichiamo il blur SOLO alla card, non a tutto lo schermo */
+    backdrop-filter: blur(8px); 
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* FORZA LA NITIDEZZA DELL'IMMAGINE DI SFONDO */
+.bg-container {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    background: url('sfondo.png');
+    background-size: cover;
+    background-position: center;
+    image-rendering: -webkit-optimize-contrast; /* Aumenta il contrasto e la nitidezza */
+}
+        
 .card-content { flex: 1; text-align: left; } /* Testo allineato a sinistra */
 .card-screenshot { flex: 1.2; display: flex; justify-content: center; }
 
@@ -191,6 +203,7 @@
 
 </body>
 </html>
+
 
 
 
