@@ -82,27 +82,26 @@
 
     /* PULSANTE NEON */
     .btn-download { 
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        background: var(--primary); 
-        color: #0f172a; 
-        padding: 20px 40px; 
-        text-decoration: none; 
-        border-radius: 16px; 
-        font-weight: 800; 
-        font-size: 1.25rem;
-        transition: all 0.3s; 
-        width: 100%;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary); 
+    color: #0f172a; 
+    padding: 10px 24px; /* Molto più sottile */
+    text-decoration: none; 
+    border-radius: 8px; 
+    font-weight: 600; 
+    font-size: 0.95rem; 
+    transition: all 0.2s ease-in-out; 
+    box-shadow: 0 4px 12px rgba(0, 255, 136, 0.15);
+}
 
-    .btn-download:hover { 
-        background: #fff; 
-        transform: scale(1.02);
-        box-shadow: 0 0 30px rgba(0, 255, 136, 0.6);
-    }
+.btn-download:hover { 
+    background: #ffffff; 
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(0, 255, 136, 0.3);
+}
+
 
     /* INFO BOX */
     .info-box { 
@@ -139,20 +138,25 @@
     
     <span class="version-tag">Versione v1.0.0</span>
     <h1>KML Converter</h1>
-    <p>La soluzione definitiva per convertire i tuoi file geografici in pochi secondi. Sicuro, leggero e gratuito.</p>
     
-    <!-- INCOLLA IL LINK DELLA RELEASE QUI SOTTO -->
+    <!-- TESTO DESCRITTIVO CORRETTO -->
+    <p>Converti i tuoi database Excel (.xls) in file KML standardizzati. <br> 
+    Ottimizzato per l'importazione diretta di punti e coordinate su portali cartografici e piattaforme web professionali.</p>
+    
+    <!-- PULSANTE RIMPICCIOLITO -->
     <a href="IL_TUO_LINK_DIRETTO_ALLO_ZIP" class="btn-download">
-        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-        Scarica Gratis
+        <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; margin-right: 8px; fill: currentColor;"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        Scarica software
     </a>
 
     <div class="info-box">
-        <span class="warning">🔒 Software Verificato</span>
-        Se appare "PC protetto", clicca su <b>Ulteriori info</b> e poi <b>Esegui comunque</b>.
+        <span class="warning">🔒 Verifica Sicurezza</span>
+        Se Windows segnala il file, clicca su <b>Ulteriori info</b> e poi <b>Esegui comunque</b>.
     </div>
 </div>
 
+
 </body>
 </html>
+
 
