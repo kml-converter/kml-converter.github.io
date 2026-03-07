@@ -46,18 +46,47 @@
     }
 
     /* CARD DARK MODE GLASS */
-    .card { 
-        background: rgba(30, 41, 59, 0.7); 
-        padding: 60px 40px; 
-        border-radius: 30px; 
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); 
-        text-align: center; 
-        max-width: 450px; 
-        width: 90%; 
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-    }
+    /* Rende la card larga e a due colonne */
+.card { 
+    background: rgba(30, 41, 59, 0.75); 
+    padding: 40px; 
+    border-radius: 30px; 
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5); 
+    display: flex; /* Attiva le colonne */
+    align-items: center;
+    gap: 40px; /* Spazio tra testo e immagine */
+    max-width: 900px; /* Card più larga per far stare tutto */
+    width: 95%; 
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: slideUp 0.8s ease-out;
+}
+
+.card-content { flex: 1; text-align: left; } /* Testo allineato a sinistra */
+.card-screenshot { flex: 1.2; display: flex; justify-content: center; }
+
+/* Stile dello screenshot */
+.img-preview {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.5s;
+    /* Massima nitidezza */
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.img-preview:hover {
+    transform: scale(1.03); /* Effetto zoom al passaggio del mouse */
+}
+
+/* Rende il sito bello anche su cellulare (mette lo screenshot sotto il testo) */
+@media (max-width: 768px) {
+    .card { flex-direction: column; text-align: center; padding: 30px; }
+    .card-content { text-align: center; }
+    .img-preview { margin-top: 20px; }
+}
+
 
     @keyframes slideUp {
         from { opacity: 0; transform: translateY(40px); }
@@ -134,30 +163,35 @@
     <div class="bg-overlay"></div>
 </div>
 <div class="card">
-    <img src="Icona.png" alt="Logo KML Converter" class="app-icon">
-    
-    <span class="version-tag">Versione v1.0.0</span>
-    <h1>KML Converter</h1>
-    
-    <!-- TESTO DESCRITTIVO CORRETTO -->
-    <p>Converti i tuoi database Excel (.xls) in file KML standardizzati. <br> 
-    Ottimizzato per l'importazione diretta di punti e coordinate su portali cartografici e piattaforme web professionali.</p>
-    
-    <!-- PULSANTE RIMPICCIOLITO -->
-    <a href="IL_TUO_LINK_DIRETTO_ALLO_ZIP" class="btn-download">
-        <svg viewBox="0 0 24 24" style="width: 16px; height: 16px; margin-right: 8px; fill: currentColor;"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-        Scarica software
-    </a>
+    <!-- COLONNA SINISTRA: Testo e Download -->
+    <div class="card-content">
+        <img src="logo.png" alt="Logo" class="app-icon">
+        <span class="version-tag">Versione v1.0.0</span>
+        <h1>KML Converter</h1>
+        <p>Converti i tuoi database Excel (.xls) in file KML standardizzati. <br> 
+        Ottimizzato per l'importazione di punti su portali cartografici professionali.</p>
+        
+        <a href="IL_TUO_LINK_ZIP_QUI" class="btn-download">
+            <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; margin-right: 8px; fill: currentColor;"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            Scarica gratis
+        </a>
 
-    <div class="info-box">
-        <span class="warning">🔒 Verifica Sicurezza</span>
-        Se Windows segnala il file, clicca su <b>Ulteriori info</b> e poi <b>Esegui comunque</b>.
+        <div class="info-box">
+            <span class="warning">🔒 Verifica Sicurezza</span>
+            Se Windows segnala il file, clicca su <b>Ulteriori info</b> ed <b>Esegui comunque</b>.
+        </div>
     </div>
+
+    <!-- COLONNA DESTRA: Lo Screenshot -->
+    <div class="card-screenshot">
+        <img src="schermata.png" alt="Anteprima Software" class="img-preview">
+    </div>    
 </div>
 
 
 </body>
 </html>
+
 
 
 
