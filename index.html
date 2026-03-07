@@ -1,58 +1,102 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <link rel="icon" type="image/x-icon" href="myicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download Software</title>
+    <title>Download KML Converter</title>
+    
+    <!-- Icona della scheda del browser (Favicon) -->
+    <link rel="icon" type="image/x-icon" href="myicon.ico">
+
     <style>
-        body { 
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-        /* sfondo.png */
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('sfondo.jpg');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
+        * { box-sizing: border-box; }
         
-        color: #333; 
-        display: flex; 
-        justify-content: center; 
-        align-items: center; 
-        height: 100vh; 
-        margin: 0; 
-    }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; color: #333; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; max-width: 400px; width: 90%; }
-        h1 { color: #2c3e50; margin-bottom: 10px; }
-        p { color: #7f8c8d; line-height: 1.6; margin-bottom: 30px; }
-        .btn-download { display: inline-block; background-color: #27ae60; color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .btn-download:hover { background-color: #219150; }
-        .info-box { margin-top: 25px; font-size: 0.85rem; color: #95a5a6; border-top: 1px solid #eee; padding-top: 15px; }
-        .warning { color: #e67e22; font-weight: bold; }
+        body { 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            margin: 0;
+            height: 100vh;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            
+            /* SFONDO DINAMICO */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('sfondo.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        .card { 
+            background: rgba(255, 255, 255, 0.95); 
+            padding: 40px; 
+            border-radius: 16px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3); 
+            text-align: center; 
+            max-width: 420px; 
+            width: 90%; 
+            backdrop-filter: blur(5px);
+        }
+
+        .app-icon {
+            width: 80px; /* Ridotto leggermente per i file .ico */
+            height: 80px;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+
+        h1 { color: #1a1a1a; margin: 0 0 10px 0; font-size: 1.8rem; }
+        p { color: #555; line-height: 1.6; margin-bottom: 30px; }
+
+        .btn-download { 
+            display: inline-block; 
+            background-color: #2ecc71; 
+            color: white; 
+            padding: 16px 32px; 
+            text-decoration: none; 
+            border-radius: 50px; 
+            font-weight: bold; 
+            font-size: 1.1rem;
+            transition: all 0.3s ease; 
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4); 
+        }
+
+        .btn-download:hover { 
+            background-color: #27ae60; 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.6);
+        }
+
+        .info-box { 
+            margin-top: 30px; 
+            font-size: 0.85rem; 
+            color: #777; 
+            border-top: 1px solid #eee; 
+            padding-top: 20px; 
+        }
+
+        .warning { color: #d35400; font-weight: bold; display: block; margin-bottom: 5px; }
     </style>
 </head>
 <body>
 
 <div class="card">
-    <img src="myicon.ico" alt="Logo" style="width: 80px; margin-bottom: 20px;">
-    <h1>🚀 KML Converter</h1>
-    <p>Scarica l'ultima versione ufficiale. <br> Sicuro, veloce e sempre aggiornato.</p>
+    <!-- Icona del programma visibile nella card -->
+    <img src="myicon.ico" alt="Logo" class="app-icon">
     
-    <!-- SOSTITUISCI IL LINK QUI SOTTO CON QUELLO DELLA TUA RELEASE GITHUB -->
-    <a href="https://github.com/kml-converter/kml-converter/releases/download/ver_1/license.enc" class="btn-download">
+    <h1>KML Converter</h1>
+    <p>Trasforma i tuoi dati geografici in modo semplice e veloce. Versione ufficiale per Windows.</p>
+    
+    <!-- SOSTITUISCI IL LINK QUI SOTTO -->
+    <a href="IL_TUO_LINK_DIRETTO_ALLO_ZIP" class="btn-download">
         SCARICA ORA (.zip)
     </a>
 
     <div class="info-box">
-        <p class="warning">Nota per l'installazione:</p>
-        Se Windows Defender segnala il file come "non riconosciuto", clicca su <b>Ulteriori info</b> e poi su <b>Esegui comunque</b>.
+        <span class="warning">⚠️ Avviso Windows Defender:</span>
+        Se appare l'avviso "PC protetto", clicca su <b>Ulteriori informazioni</b> e poi su <b>Esegui comunque</b>.
     </div>
 </div>
 
 </body>
 </html>
-
-
-
-
-
